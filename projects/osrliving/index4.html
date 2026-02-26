@@ -1,1 +1,548 @@
 
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSR Living | Home Away From Home</title>
+    <meta name="description" content="Modern, comfortable, and vibrant co-living spaces in Laxmi Nagar, New Delhi.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f2fbf4',
+                            100: '#e1f5e6',
+                            200: '#c3ecd0',
+                            300: '#94ddaa',
+                            400: '#5fc37f',
+                            500: '#3aa55d',
+                            600: '#2b8448', /* Core Dark Green */
+                            700: '#25693b',
+                            800: '#205432',
+                            900: '#1b452b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
+                        'glow': '0 0 20px rgba(43, 132, 72, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #2b8448, #5fc37f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .blob-bg {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        /* Custom image rounded shapes */
+        .img-blob-1 {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+
+        .img-blob-2 {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-[#F8FAFC] text-gray-800 font-sans antialiased selection:bg-brand-500 selection:text-white relative overflow-x-hidden w-full max-w-[100vw]">
+
+    <!-- Background Blobs -->
+    <div class="blob-bg bg-brand-300 w-96 h-96 rounded-full top-0 left-[-100px]"></div>
+    <div class="blob-bg bg-brand-200 w-[500px] h-[500px] rounded-full top-[20%] right-[-150px]"></div>
+
+    <!-- Header -->
+    <header
+        class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Text Logo Matching Theme -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <a href="#" class="flex flex-col">
+                        <div class="flex items-center text-2xl font-display font-bold tracking-tight text-gray-900">
+                            <i class="fas fa-home text-brand-500 mr-2"></i>
+                            <span class="text-brand-600">OSR</span> <span class="ml-1.5">LIVING</span>
+                        </div>
+                        <span class="text-[10px] font-medium tracking-widest text-gray-500 uppercase mt-0.5">Home Away
+                            From Home</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#about"
+                        class="text-gray-600 hover:text-brand-600 font-medium text-sm transition-colors">Why Us</a>
+                    <a href="#spaces"
+                        class="text-gray-600 hover:text-brand-600 font-medium text-sm transition-colors">Our Spaces</a>
+                    <a href="#lifestyle"
+                        class="text-gray-600 hover:text-brand-600 font-medium text-sm transition-colors">Lifestyle</a>
+                    <a href="#contact"
+                        class="text-gray-600 hover:text-brand-600 font-medium text-sm transition-colors">Contact</a>
+                    <a href="#contact"
+                        class="bg-brand-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-brand-700 shadow-glow transition-all hover:-translate-y-0.5">
+                        Schedule an Output
+                    </a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="hidden md:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-3xl pt-24 pb-6 px-6 flex flex-col space-y-6 overflow-y-auto shadow-2xl">
+        <a href="#about" class="text-gray-900 text-xl font-display font-bold border-b border-gray-100 pb-4 mt-8">Why
+            Us</a>
+        <a href="#spaces" class="text-gray-900 text-xl font-display font-bold border-b border-gray-100 pb-4">Our
+            Spaces</a>
+        <a href="#lifestyle"
+            class="text-gray-900 text-xl font-display font-bold border-b border-gray-100 pb-4">Lifestyle</a>
+        <a href="#contact"
+            class="text-gray-900 text-xl font-display font-bold border-b border-gray-100 pb-4">Contact</a>
+        <a href="#contact"
+            class="bg-brand-600 text-white text-center py-4 rounded-full font-semibold text-lg hover:bg-brand-700 shadow-glow mt-4 transition-all">Schedule
+            a Tour</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="max-w-2xl">
+                    <div
+                        class="inline-flex items-center bg-brand-50 rounded-full px-4 py-2 border border-brand-100 mb-6 font-medium text-sm text-brand-700">
+                        <span class="flex h-2 w-2 relative mr-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+                        </span>
+                        Premium Co-Living in Laxmi Nagar
+                    </div>
+
+                    <h1 class="text-5xl md:text-6xl font-display font-bold leading-[1.15] text-gray-900 mb-6">
+                        Your Perfect <br>
+                        <span class="gradient-text">Home Away</span> <br>
+                        From Home.
+                    </h1>
+
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
+                        Step into a beautifully designed, fully-furnished space that offers the perfect balance of
+                        privacy, community connection, and unmatched convenience.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/919718382417" target="_blank"
+                            class="flex items-center justify-center bg-brand-600 text-white font-semibold rounded-full px-8 py-4 hover:bg-brand-700 hover:shadow-glow transition-all duration-300">
+                            <i class="fab fa-whatsapp text-xl mr-2"></i> Chat on WhatsApp
+                        </a>
+                        <a href="#spaces"
+                            class="flex items-center justify-center bg-white text-gray-800 font-semibold rounded-full px-8 py-4 border border-gray-200 hover:border-brand-300 hover:text-brand-600 transition-all duration-300 shadow-sm">
+                            View Rooms
+                        </a>
+                    </div>
+
+                    <div class="mt-10 flex items-center gap-4 text-sm font-medium text-gray-500">
+                        <div class="flex -space-x-3">
+                            <img class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop"
+                                alt="Resident">
+                            <img class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop"
+                                alt="Resident">
+                            <img class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop"
+                                alt="Resident">
+                        </div>
+                        <p>Join <span class="text-gray-900 font-bold">100+</span> happy residents</p>
+                    </div>
+                </div>
+
+                <!-- Hero Images -->
+                <div class="relative hidden md:block h-[600px]">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?fit=crop&w=800&q=80"
+                        alt="Beautiful Room"
+                        class="absolute top-0 right-0 w-[400px] h-[450px] object-cover rounded-[2rem] shadow-soft z-10 border-[6px] border-white">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?fit=crop&w=600&q=80"
+                        alt="Community Area"
+                        class="absolute bottom-0 left-0 w-[300px] h-[300px] object-cover rounded-[2rem] shadow-soft z-20 border-[6px] border-white">
+
+                    <!-- Floating Highlight Tag -->
+                    <div class="absolute top-20 right-[350px] bg-white rounded-2xl p-4 shadow-soft z-30 flex items-center gap-3 animate-bounce"
+                        style="animation-duration: 3s;">
+                        <div
+                            class="bg-brand-100 text-brand-600 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900 leading-tight">High-Speed</p>
+                            <p class="text-xs text-gray-500">Wi-Fi Included</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section (Modern Bento Grid) -->
+    <section id="about" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <h2 class="text-brand-600 font-bold tracking-wide uppercase text-sm mb-3">Redefining Co-Living</h2>
+                <h3 class="text-4xl font-display font-bold text-gray-900 mb-4">Everything you need, nothing you don't.
+                </h3>
+                <p class="text-gray-600 text-lg">We handle the chores, the bills, and the maintenance. You focus on
+                    living your best life.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-brand-50 rounded-3xl p-8 md:col-span-2 relative overflow-hidden group">
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm text-brand-500 text-2xl mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300">
+                            <i class="fas fa-couch"></i>
+                        </div>
+                        <h4 class="text-2xl font-display font-bold text-gray-900 mb-3">Fully Furnished Spaces</h4>
+                        <p class="text-gray-600 max-w-sm">From plush mattresses to ergonomic study corners, our spaces
+                            are meticulously designed for absolute comfort from day one.</p>
+                    </div>
+                    <!-- Decor -->
+                    <div
+                        class="absolute -bottom-10 -right-10 text-[150px] text-brand-100/50 z-0 transform -rotate-12 group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 group">
+                    <div
+                        class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm text-brand-500 text-2xl mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 class="text-xl font-display font-bold text-gray-900 mb-3">Unmatched Security</h4>
+                    <p class="text-gray-600">Biometric entry, 24/7 CCTV surveillance, and dedicated staff to ensure you
+                        always feel safe.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 group">
+                    <div
+                        class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm text-brand-500 text-2xl mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h4 class="text-xl font-display font-bold text-gray-900 mb-3">Daily Housekeeping</h4>
+                    <p class="text-gray-600">Return to a spotless room every single day. We take care of the cleaning so
+                        you don't have to.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-gray-900 rounded-3xl p-8 md:col-span-2 text-white relative overflow-hidden group">
+                    <div class="relative z-10 flex flex-col justify-center h-full">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-brand-400 text-xl backdrop-blur-md">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h4 class="text-2xl font-display font-bold">Premium Home-Style Meals</h4>
+                        </div>
+                        <p class="text-gray-300 max-w-md">Enjoy nutritious, delicious meals prepared daily in our
+                            hygienic kitchens. Say goodbye to ordering food every night.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745a872f?fit=crop&w=600&q=80"
+                        alt="Kitchen"
+                        class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay group-hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="spaces" class="py-24 bg-[#F8FAFC]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-600 font-bold tracking-wide uppercase text-sm mb-3">Your Ideal Space</h2>
+                <h3 class="text-4xl font-display font-bold text-gray-900 mb-4">Find the perfect fit.</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Room Card 1 -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-soft hover:-translate-y-2 transition-transform duration-300 border border-gray-100 flex flex-col">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?fit=crop&w=600&q=80"
+                            class="w-full h-full object-cover" alt="Vibrant Room">
+                        <div
+                            class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-gray-900 text-xs font-bold px-3 py-1.5 rounded-full">
+                            Most Social
+                        </div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h4 class="text-2xl font-display font-bold text-gray-900 mb-2">The Dynamic Trio</h4>
+                        <p class="text-gray-500 text-sm mb-6">A spacious setup perfect for students who love an
+                            energetic and collaborative environment.</p>
+
+                        <div class="space-y-3 mb-8 flex-1">
+                            <div class="flex items-center text-gray-700 text-sm"><i
+                                    class="fas fa-check-circle text-brand-500 mr-3"></i> 3 Separate Beds + Lockers</div>
+                            <div class="flex items-center text-gray-700 text-sm"><i
+                                    class="fas fa-check-circle text-brand-500 mr-3"></i> Attached Premium Washroom</div>
+                            <div class="flex items-center text-gray-700 text-sm"><i
+                                    class="fas fa-check-circle text-brand-500 mr-3"></i> Large Work/Study Desks</div>
+                        </div>
+
+                        <a href="#contact"
+                            class="block w-full text-center bg-brand-50 text-brand-700 font-semibold rounded-2xl py-3 hover:bg-brand-600 hover:text-white transition-colors duration-300">
+                            Book a Visit
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Room Card 2 -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-soft hover:-translate-y-2 transition-transform duration-300 border-[3px] border-brand-500 flex flex-col relative transform md:-translate-y-4">
+                    <div
+                        class="absolute top-0 w-full text-center py-1.5 bg-brand-500 text-white text-xs font-bold uppercase tracking-wider z-10">
+                        Highly Preferred</div>
+                    <div class="h-56 overflow-hidden mt-6 relative">
+                        <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?fit=crop&w=600&q=80"
+                            class="w-full h-full object-cover" alt="Double Room">
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h4 class="text-2xl font-display font-bold text-gray-900 mb-2">The Harmony Twin</h4>
+                        <p class="text-gray-500 text-sm mb-6">The perfect balance of personal space and companionship
+                            for young professionals and focused students.</p>
+
+                        <div class="space-y-3 mb-8 flex-1">
+                            <div class="flex items-center text-gray-700 text-sm"><i
+                                    class="fas fa-check-circle text-brand-500 mr-3"></i> Twin Luxury Beds</div>
+                            <div class="flex items-center text-gray-700 text-sm"><i
+                                    class="fas fa-check-circle text-brand-500 mr-3"></i> Individual Wardrobes</div>
+                            <div class="flex items-center text-gray-700 text-sm"><i
+                                    class="fas fa-check-circle text-brand-500 mr-3"></i> Natural Sunlit Rooms</div>
+                        </div>
+
+                        <a href="#contact"
+                            class="block w-full text-center bg-brand-600 text-white font-semibold rounded-2xl py-3 hover:bg-brand-700 shadow-glow transition-all duration-300">
+                            Book a Visit
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Room Card 3 -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-soft hover:-translate-y-2 transition-transform duration-300 border border-gray-100 flex flex-col">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?fit=crop&w=600&q=80"
+                            class="w-full h-full object-cover" alt="Single Room">
+                        <div
+                            class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-gray-900 text-xs font-bold px-3 py-1.5 rounded-full">
+                            Maximum Privacy
+                        </div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h4 class="text-2xl font-display font-bold text-gray-900 mb-2">The Solo Suite</h4>
+                        <p class="text-gray-500 text-sm mb-6">An intimate, completely private sanctuary exclusively
+                            crafted for absolute focus and relaxation.</p>
+
+                        <div class="space-y-3 mb-8 flex-1">
+                            <div class="flex items-center text-gray-700 text-sm"><i
+                                    class="fas fa-check-circle text-brand-500 mr-3"></i> 100% Private Accommodation
+                            </div>
+                            <div class="flex items-center text-gray-700 text-sm"><i
+                                    class="fas fa-check-circle text-brand-500 mr-3"></i> Executive Corner Setup</div>
+                            <div class="flex items-center text-gray-700 text-sm"><i
+                                    class="fas fa-check-circle text-brand-500 mr-3"></i> Dedicated En-suite Washroom
+                            </div>
+                        </div>
+
+                        <a href="#contact"
+                            class="block w-full text-center bg-brand-50 text-brand-700 font-semibold rounded-2xl py-3 hover:bg-brand-600 hover:text-white transition-colors duration-300">
+                            Book a Visit
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social / Lifestyle Section (Call To Action style layout) -->
+    <section id="lifestyle" class="py-24 bg-brand-900 text-brand-50 relative overflow-hidden">
+        <!-- Decoration -->
+        <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-800 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-display font-bold mb-6 text-white">More than just a room. <br> A
+                vibrant community.</h2>
+            <p class="text-brand-200 text-lg max-w-2xl mx-auto mb-10">Follow our daily life, community events, and
+                resident stories on Instagram. Become a part of the OSR Living family before you even arrive.</p>
+
+            <a href="https://www.instagram.com/osr_living/" target="_blank"
+                class="inline-flex items-center justify-center bg-white text-brand-900 font-bold rounded-full px-8 py-4 hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                <i class="fab fa-instagram text-2xl mr-3 text-pink-600"></i> Follow @osr_living
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contact" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="text-brand-600 font-bold tracking-wide uppercase text-sm mb-2">Get in Touch</h2>
+                    <h3 class="text-4xl font-display font-bold text-gray-900 mb-6">Let's find your spot.</h3>
+                    <p class="text-gray-600 mb-10">Fill out your details below and our team will get back to you
+                        immediately with availability and pricing details.</p>
+
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
+                                <input type="text"
+                                    class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-5 py-3 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200 transition-all text-gray-800"
+                                    placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel"
+                                    class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-5 py-3 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200 transition-all text-gray-800"
+                                    placeholder="+91 90000 00000">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">What are you looking
+                                for?</label>
+                            <div class="relative">
+                                <select
+                                    class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-5 py-3 appearance-none focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200 transition-all text-gray-800">
+                                    <option>The Solo Suite (Private)</option>
+                                    <option>The Harmony Twin (Double Sharing)</option>
+                                    <option>The Dynamic Trio (Triple Sharing)</option>
+                                </select>
+                                <i
+                                    class="fas fa-chevron-down absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Additional Comments</label>
+                            <textarea rows="4"
+                                class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-5 py-3 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200 transition-all text-gray-800 resize-none"
+                                placeholder="Let us know if you have any special requirements..."></textarea>
+                        </div>
+                        <button type="button"
+                            class="w-full bg-gray-900 text-white font-bold rounded-2xl py-4 hover:bg-brand-600 shadow-xl shadow-gray-200 transition-all duration-300">
+                            Send Inquiry
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info & Map -->
+                <div
+                    class="flex flex-col h-full rounded-3xl overflow-hidden shadow-soft border border-gray-100 bg-white">
+                    <div class="p-8 bg-brand-50 text-brand-900 flex flex-col sm:flex-row gap-8 justify-between">
+                        <div>
+                            <h4 class="font-display font-bold text-lg mb-4 flex items-center"><i
+                                    class="fas fa-map-pin mr-2 text-brand-600"></i> Our Locations</h4>
+                            <div class="space-y-4 text-sm font-medium">
+                                <p><span class="block text-brand-600 font-bold mb-1 uppercase text-xs">Building 1</span>
+                                    K-112, Guru Ram Das Nagar,<br>Laxmi Nagar, New Delhi - 110092</p>
+                                <p><span class="block text-brand-600 font-bold mb-1 uppercase text-xs">Building 2</span>
+                                    D-64, Gali No. 3,<br>Laxmi Nagar, New Delhi - 110092</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-display font-bold text-lg mb-4 flex items-center"><i
+                                    class="fas fa-phone-alt mr-2 text-brand-600"></i> Call Us</h4>
+                            <a href="https://wa.me/919718382417"
+                                class="text-xl font-bold bg-white px-4 py-2 rounded-xl text-brand-600 hover:bg-brand-600 hover:text-white transition-colors inline-block">+91
+                                9718382417</a>
+                        </div>
+                    </div>
+                    <!-- Map Frame -->
+                    <div class="flex-1 w-full min-h-[300px] relative bg-gray-200">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.77989004469!2d77.27882149999999!3d28.636358299999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd69d7d00b39%3A0xcf6921d6052f6770!2sOsr%20Living!5e0!3m2!1sen!2sin!4v1772014167120!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="absolute inset-0 w-full h-full object-cover">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6 mb-12">
+                <div class="flex items-center text-2xl font-display font-bold tracking-tight text-gray-900">
+                    <i class="fas fa-home text-brand-500 mr-2"></i>
+                    <span class="text-brand-600">OSR</span> <span class="ml-1.5">LIVING</span>
+                </div>
+
+                <div class="flex space-x-6 text-gray-500">
+                    <a href="https://www.instagram.com/osr_living/" target="_blank"
+                        class="hover:text-brand-600 transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+                    <a href="https://wa.me/919718382417" target="_blank"
+                        class="hover:text-brand-600 transition-colors"><i class="fab fa-whatsapp text-2xl"></i></a>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-100 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 font-medium gap-4">
+                <p>&copy; 2026 OSR Living. All Rights Reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-brand-600">Privacy</a>
+                    <a href="#" class="hover:text-brand-600">Terms</a>
+                </div>
+                <p class="text-brand-600">Developed by Amit Gupta</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
